@@ -1,8 +1,10 @@
 
 
- 
+import time
 import asyncio
 import httpx
+
+start=time.perf_counter()
 urls=[
     "https://jsonplaceholder.typicode.com/users/1",
     "https://jsonplaceholder.typicode.com/users/2",
@@ -23,6 +25,8 @@ async def all():
     for resss in res:
         print(resss)    
 asyncio.run(all())
+end=time.perf_counter()
+print(f"Processed {end-start}")
 
 
     
